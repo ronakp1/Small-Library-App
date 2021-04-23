@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="form-styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Library</h1>
+    </div>
+    <div class="interactive-button">
+        <button type="submit" class="add-book" data-addBook>Add Book</button>
+    </div>
+    <div class="results-container">
+        <div class="results">
+        </div>
+    </div>
+    <div class="hold">
+        <div class="form" id="my-form">
+            <h2> Add New Book</h2>
+            <input type="text" class="fields" placeholder="Title" minlength="1" data-name>
+            <input type="text" class="fields" placeholder="Author" minlength="3" data-author>
+            <input type="number" class="fields" placeholder="Number Of Pages" min="0" data-pages>
+            <div class="readYet">
+                <label for ="readYet">Read?</label><input type="checkbox" class="fields" value="yes" data-readYet>
+            </div>
+            <button type="submit" data-submit>SUBMIT</button>
+        </div>
+    </div>
+    <div class="overlay"></div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
+</doctype html>
