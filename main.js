@@ -5,14 +5,17 @@ const nameo = document.querySelector('[data-name]');
 const pages = document.querySelector('[data-pages]');
 const author = document.querySelector('[data-author]');
 const readYet = document.querySelector('[data-readYet]');
+
 const inputFields = document.querySelectorAll('.fields');
+
 const bookNameDiv = document.getElementById('bookName');
 const authorDiv = document.getElementById('author');
 const pagesDiv = document.getElementById('pages');
 const readYetDiv = document.getElementById('readYet');
-const results = document.querySelector('.results');
 
+const results = document.querySelector('.results');
 const hold = document.querySelector('.hold');
+
 let library = [];
 
 function Book(nameOfBook, author, numberOfPages, readYet) {
@@ -22,7 +25,7 @@ function Book(nameOfBook, author, numberOfPages, readYet) {
     this.readYet = readYet;
 }
 
-function validateFields() {
+const validateFields = () => {
     const inputs = [...inputFields];
     const fields = inputs.filter(word => word.value.length == 0);
     if (fields.length == 0) {
@@ -33,20 +36,19 @@ function validateFields() {
     }
 }
 
-function addBookToLibrary() {
+const addBookToLibrary = () => {
     const bookEntry = new Book(`"${nameo.value}"`, author.value, `${pages.value} pages`, readYet.value);
     library.push(bookEntry);
     clearFields();
     displayBook();
 }
 
-function clearFields() {
+const clearFields = () => {
     const inputs = [...inputFields];
-    console.log(inputs[0].value)
     inputs.map(fields => fields.value = "");
 }
 
-function displayBook() {
+const displayBook = () => {
     if (library.length !== 0) {
         let card = document.createElement('div');
         card.classList.add("card");
@@ -100,11 +102,11 @@ function displayBook() {
             deleteBook(bookNameID);
             e.target.parentNode.remove();
         })
-        console.log(library)
+
     }
 }
 
-function deleteBook(bookNameID) {
+const deleteBook = bookNameID => {
     library = library.filter(book => book.nameOfBook !== bookNameID);
 }
 
