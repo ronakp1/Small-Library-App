@@ -28,6 +28,7 @@ function Book(nameOfBook, author, numberOfPages, readYet) {
 const validateFields = () => {
     const inputs = [...inputFields];
     const fields = inputs.filter(word => word.value.length == 0);
+
     if (fields.length == 0) {
         addBookToLibrary();
         hold.classList.remove('active');
